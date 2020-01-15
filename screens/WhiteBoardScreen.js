@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
-import {ScrollView, View, Text, Picker, StyleSheet, Button, Linking, Alert, Dimensions} from 'react-native';
+import {ScrollView, View, ViewPropTypes, Text, Picker, StyleSheet, Button, Linking, Alert, Dimensions} from 'react-native';
+import PropTypes from 'prop-types';
 import * as WebBrowser from 'expo-web-browser';
 import Constants from 'expo-constants';
-import { StackNavigator } from 'react-navigation';
-import Pdf from 'react-native-pdf';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import PDFReader from 'rn-pdf-reader-js';
 
 
-class Dropdown extends Component {
-  
-  state = {strike_stage: '', e2_stage: '', link: '', modalVisible: false}
+class DropdownScreen extends Component {
+
+  state = {strike_stage: '', e2_stage: '', link: ''}
   updateStrike = (stage) => {
       this.setState({ strike_stage: stage })
    }
   updateE2 = (stage) => {
       this.setState({ e2_stage: stage })
   }
-
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible})
-  }
-
-  static navigationOptions = {
-    title: 'WhiteBoard'
-  };
 
   render() {
     return (
@@ -54,11 +48,7 @@ class Dropdown extends Component {
       </Picker>
       <Button
           title= 'Open Syllabus'
-          onPress={() =>  { 
-            // this.props.navigation.navigate('Strike', {page: this.state.strike_stage})
-
-          }
-        }
+          onPress={ () => this.props.navigation.navigate('Strike', {page: this.state.strike_stage}) }
       />
 
       <View
@@ -86,58 +76,59 @@ class Dropdown extends Component {
       </Picker>
       <Button
           title= 'Open Syllabus'
-          onPress={() =>  { 
-            // this.props.navigation.navigate('E2C2', {page: this.state.e2_stage})
-          }
-        }
+          onPress={ () => this.props.navigation.navigate('E2C2', {page: this.state.e2_stage}) }
       />
     </ScrollView>
     );
   }
 }
 
-// class Strike extends Component {
-//   static navigationOptions = {
-//     title: 'Strike MPTS'
-//   };
-//   state = {page: this.props.navigation.getParam('page', 1)}
+class Strike extends Component {
+  
+  render() {
+    const pg = this.props.navigation.getParam('page', '')
+    return (
+      <PDFReader
+        source={{
+          uri: 'https://cnatra.navy.mil/local/docs/instructions/1542.167.pdf#page' + pg,
+        }}
+      />
+    )
+  }
+}
 
-//   render() {
-//     const source = {uri:'bundle-assets://strike.pdf'}
+class E2C2 extends Component {
+  
+  render() {
+    const pg = this.props.navigation.getParam('page', '')
+    return (
+      <PDFReader
+        source={{
+          uri: 'https://cnatra.navy.mil/local/docs/instructions/1542.176.pdf#page' + pg,
+        }}
+      />
+    )
+  }
 
-//     return <Pdf
-//               source={source}
-//               style={styles.pdf}
-//             />;
-//   }
-// }
+}
 
-// class E2C2 extends Component {
-//   static navigationOptions = {
-//     title: 'E2C2 MPTS'
-//   };
-//   state = {page: this.props.navigation.getParam('page', 1)}
+const RootStack = createStackNavigator(
+  {
+    Dropdown: DropdownScreen,
+    Strike: Strike,
+    E2C2: E2C2
+  },
+  {
+    initialRouteName: 'Dropdown',
+  }
+);
 
-//   render() {
-//     const source = {uri:'bundle-assets://e2c2.pdf'}
-
-//     return <Pdf
-//               source={source}
-//               style={styles.pdf}
-//             />;
-//   }
-// }
-
-// const PdfNav = StackNavigator({
-//   WhiteBoard: { screen: WhiteBoard },
-//   Strike: { screen: Strike },
-//   E2C2: { screen: E2C2 }
-// });
+const AppContainer = createAppContainer(RootStack);
 
 
 export default function WhiteBoardScreen() {
   return (
-    <Dropdown/>
+    <AppContainer/>
   );
 }
 
@@ -193,8 +184,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   getStartedText: {
-    paddingTop: 20,
-    fontSize: 17,
+    paddingTop: 5,
+    fontSize: 15,
     fontWeight: 'bold',
     color: 'rgba(96,100,109, 1)',
     lineHeight: 20,

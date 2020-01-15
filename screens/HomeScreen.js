@@ -68,7 +68,7 @@ export default function HomeScreen() {
           source={require('../assets/images/t45.png')}
         />
 
-        <Text style = {{fontSize: 8}}> venmo me @jobin-murickan to buy me beer if this helped you :) </Text>
+        <Text style = {{fontSize: 8}}> he's special ^ </Text>
 
       </ScrollView>
 
