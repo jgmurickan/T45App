@@ -87,7 +87,6 @@ class Strike extends Component {
   
   render() {
     const pg = this.props.navigation.getParam('page', '')
-    console.log(pg)
     if(pg == '163') { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/gysrfujkb2udmy1/BI_STRIKE.pdf?dl=0-R'  }} />); }
     if(pg == '172') { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/kqxutg3rt22g2c4/RI_STRIKE.pdf?dl=0' }} />); }
     if(pg == '87')  { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/tbp3ugaztpjr8i7/FAM_STRIKE.pdf?dl=0' }}/>); }
@@ -119,7 +118,6 @@ class E2C2 extends Component {
   
   render() {
     const pg = this.props.navigation.getParam('page', '')
-    console.log(pg)
     if(pg == '175') { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/jeom3jdmwpzo57m/BI_E2C2.pdf?dl=0'  }} />); }
     if(pg == '184') { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/t8nchgmhhozapaf/RI_E2C2.pdf?dl=0' }} />); }
     if(pg == '98')  { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/8l7dc122l8q1f9q/FAM_E2C2.pdf?dl=0' }}/>); }

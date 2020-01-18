@@ -397,7 +397,6 @@ class Metar extends Component {
 
   getAbortDryHalf(ratio) {
     rat = Math.trunc(ratio * 100)/100
-    console.log(rat)
     if(rat == .70) return 114
     if(rat == .71) return 116
     if(rat == .72) return 116
@@ -713,10 +712,8 @@ class Metar extends Component {
   }
 
   render() {
-    console.log(this.state.loading)
     if(!this.state.loading){
       this.setState({loading: 1})
-      console.log("here")
       return (<Text>Loading...</Text>);
     }
 
@@ -795,7 +792,6 @@ export default function TOLDScreen() {
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
     setVal(val + 1);
-    // console.log(val)
     wait(1000).then(() => setRefreshing(false));
   }, [refreshing]);
 
