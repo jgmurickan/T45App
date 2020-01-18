@@ -72,6 +72,8 @@ export default function HomeScreen() {
           source={require('../assets/images/t45.png')}
         />
 
+        <Text style = {{ fontSize: 8 }}> © Murickan Enterprises LLC 501(c)(3) Non Profit 401k Fortune 501 Company</Text>
+
 
       </ScrollView>
 

@@ -1350,7 +1350,7 @@ class OPS extends Component {
 
   render() {
     return (
-        <View style={{marginTop: 22}}>
+        <ScrollView style={{marginTop: 22}}>
           
           <Modal
             animationType="slide"
@@ -1385,7 +1385,7 @@ class OPS extends Component {
             }}>
           </Button>
 
-        </View>
+        </ScrollView>
     );
   }
 }
