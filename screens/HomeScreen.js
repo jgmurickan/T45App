@@ -8,9 +8,12 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Dimensions
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+
+const deviceWidth = Dimensions.get('window').width;
 
 export default function HomeScreen() {
   return (
@@ -21,7 +24,7 @@ export default function HomeScreen() {
 
         <View style={styles.getStartedContainer}>
 
-          <Text style={styles.getStartedText}>Welcome to the Scuffed T45 Briefing App!</Text>
+          <Text style={styles.getStartedText}>Welcome to the T45 Briefing App!</Text>
 
         </View>
 
@@ -61,14 +64,14 @@ export default function HomeScreen() {
           style = {{
             paddingTop: 100,
             justifyContent: 'center',
-            // alignItems: 'center',
-            height: '50%',
-            width: '50%'
+            alignItems: 'center',
+            height: deviceWidth,
+            width: deviceWidth,
+            flex: 1
           }}
           source={require('../assets/images/t45.png')}
         />
 
-        <Text style = {{fontSize: 8}}> he's special ^ </Text>
 
       </ScrollView>
 
@@ -197,7 +200,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   getStartedText: {
-    fontSize: 17,
+    marginTop:50,
+    fontSize: 25,
+    fontWeight: 'bold',
     color: 'rgba(96,100,109, 1)',
     lineHeight: 24,
     textAlign: 'center',
