@@ -161,7 +161,7 @@ class Metar extends Component {
     return density/.0023769
   }
 
-  getNormalLineSpeedHalf(ratio) {
+  getNormalLineSpeedFull(ratio) {
     rat = ratio*100
     if(rat > 69 && rat < 76) {
       dif = rat-70
@@ -198,9 +198,10 @@ class Metar extends Component {
       num = (5/5) * dif
       return Math.round((107+num)*100)/100
     }
+    else return 112
   }
 
-  getNormalLineSpeedFull(ratio) {
+  getNormalLineSpeedHalf(ratio) {
     rat = ratio*100
     if(rat > 69 && rat < 76) {
       dif = rat-70
@@ -237,6 +238,7 @@ class Metar extends Component {
       num = (4/5) * dif
       return Math.round((110+num)*100)/100
     }
+    else return 114
   }
 
   getSectionLineSpeed(ratio) {
@@ -276,6 +278,7 @@ class Metar extends Component {
       num = (7/5) * dif
       return Math.round((105+num)*100)/100
     }
+    else return 112
   }
 
   getNormalTOHalf(ratio) {
@@ -315,6 +318,7 @@ class Metar extends Component {
       num = (227/5) * dif
       return Math.round((2247-num)*100)/100
     }
+    else return 2020
   }
 
   getNormalTOFull(ratio) {
@@ -354,6 +358,7 @@ class Metar extends Component {
       num = (161/5) * dif
       return Math.round((1758-num)*100)/100
     }
+    else return 1597
   }
 
   getSectionTO(ratio) {
@@ -393,10 +398,11 @@ class Metar extends Component {
       num = (320/5) * dif
       return Math.round((2454-num)*100)/100
     }
+    else return 2134
   }
 
   getAbortDryHalf(ratio) {
-    rat = Math.trunc(ratio * 100)/100
+    rat = Math.trunc(ratio * 100)/100 
     if(rat == .70) return 114
     if(rat == .71) return 116
     if(rat == .72) return 116
@@ -434,7 +440,8 @@ class Metar extends Component {
     if(rat == 1.04) return 148 
     if(rat == 1.05) return 149 
     if(rat == 1.06) return 150 
-    if(rat == 1.07) return 152   
+    if(rat == 1.07) return 152
+    else return 152   
   }
 
   getAbortWetHalf(ratio) {
@@ -477,7 +484,8 @@ class Metar extends Component {
     if(rat == 1.05) return 113 
     if(rat == 1.06) return 114 
     if(rat == 1.07) return 115   
-    if(rat == 1.08) return 116 
+    if(rat == 1.08) return 116
+    else return 116 
   }
 
   getAbortDryFull(ratio) {
@@ -520,7 +528,8 @@ class Metar extends Component {
     if(rat == 1.05) return 145 
     if(rat == 1.06) return 146 
     if(rat == 1.07) return 147   
-    if(rat == 1.08) return 148 
+    if(rat == 1.08) return 148
+    else return 148 
   }
   
   getAbortWetFull(ratio) {
@@ -563,7 +572,8 @@ class Metar extends Component {
     if(rat == 1.05) return 117 
     if(rat == 1.06) return 117 
     if(rat == 1.07) return 118   
-    if(rat == 1.08) return 118 
+    if(rat == 1.08) return 118
+    else return 118 
   }
 
   componentDidMount() {
@@ -624,9 +634,11 @@ class Metar extends Component {
       .then(m_results => m_results.json())
       .then(m_results => {
         this.setState({m_metar: m_results["raw"], m_temp: m_results["temperature"]["value"], dewpoint: m_results["dewpoint"]["value"], altimeter: m_results["altimeter"]["value"]})
+        console.log(this.state.dewpoint)
 
         ratio = this.getDensityRatio(this.state.m_temp, this.state.dewpoint, this.state.altimeter)
         this.setState({m_ratio: ratio})
+        console.log(ratio)
         
         rpm = this.getRPM(this.state.m_temp)
         this.setState({m_rpm: rpm})
