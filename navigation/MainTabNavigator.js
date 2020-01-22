@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import TOLDScreen from '../screens/TOLDScreen';
 import WhiteBoardScreen from "../screens/WhiteBoardScreen"
 import EPScreen from '../screens/EPScreen';
+import GougeScreen from '../screens/GougeScreen'
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -84,11 +85,28 @@ EPStack.navigationOptions = {
 
 EPStack.path = '';
 
+const GougeStack = createStackNavigator(
+  {
+    Gouge: GougeScreen,
+  },
+  config
+);
+
+GougeStack.navigationOptions = {
+  tabBarLabel: 'Gouge',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-book' : 'md-book'} />
+  ),
+};
+
+GougeStack.path = '';
+
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   WhiteBoardStack,
   EPStack,
+  GougeStack,
 });
 
 tabNavigator.path = '';

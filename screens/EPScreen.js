@@ -1,5 +1,22 @@
 import React, {Component} from 'react';
-import { View, ScrollView, Image, Text, Modal, TouchableHighlight, Button } from 'react-native';
+import { View, ScrollView, Image, Text, Modal, TouchableHighlight } from 'react-native';
+import { ThemeProvider, Button } from 'react-native-elements';
+
+const theme = {
+  Button: {
+
+    containerViewStyle: {
+      borderRadius:100,
+      large: true,
+    },
+    buttonStyle: {
+      borderRadius:100,
+      large: true,
+      backgroundColor: 'red',
+    },
+
+  }
+};
 
 class EGTRPM extends Component {
 
@@ -33,23 +50,27 @@ class EGTRPM extends Component {
                   <Text>If EGT responds normally:</Text>
                   <Text style={{fontWeight: 'bold'}}> 4. Throttle - Slowly advance to minimum for safe flight </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+
+                  <ThemeProvider theme={theme}><Button
+                                       style={{marginTop:30}}
+                                       title="RETURN"
+                                       titleStyle={{fontWeight: 'bold'}}
+                                       onPress={() => {
+                                         this.setModalVisible(false);
+                                       }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="EGT/RPM WARNING LIGHT OR COMPRESSOR STALL"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="EGT/RPM WARNING LIGHT OR COMPRESSOR STALL"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -88,23 +109,26 @@ class SKID extends Component {
                   <Text style={{fontWeight: 'bold'}}> 3. ANTI-SKID switch - OFF </Text>
                   <Text style={{fontWeight: 'bold'}}> 4. Brakes - Apply gradually </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="SKID CAUTION LIGHT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="SKID CAUTION LIGHT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -141,23 +165,26 @@ class TPHOT extends Component {
                   <Text style={{fontWeight: 'bold'}}> 1. Throttle - Minimum for safe flight </Text>
 
                   
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="TP HOT CAUTION LIGHT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="TP HOT CAUTION LIGHT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -197,23 +224,26 @@ class CLEARENG extends Component {
                   <Text style={{fontWeight: 'bold'}}> 6. ENGINE switch - START </Text>
 
                   
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="CLEAR ENGINE PROCEDURE/ABNORMAL START/TP FIRE ON SHUTDOWN"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="CLEAR ENGINE PROCEDURE/ABNORMAL START/TP FIRE ON SHUTDOWN"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -246,23 +276,26 @@ class EFIRE extends Component {
 
                   <Text style={{fontWeight: 'bold'}}> 1. GENERATOR Switch - OFF </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="ELECTRICAL FIRE"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="ELECTRICAL FIRE"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -303,23 +336,26 @@ class FIRE extends Component {
                   <Text>In Flight </Text>
                   <Text style={{fontWeight: 'bold'}}> 1. Throttle - Minimum for safe flight </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="FIRE WARNING LIGHT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="FIRE WARNING LIGHT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -361,23 +397,26 @@ class BRAKE extends Component {
                   <Text style={{fontWeight: 'bold'}}> 5. HOOK - DOWN (if required) </Text>
                   <Text style={{fontWeight: 'bold'}}> 6. Parking Brake Handle - PULL (if required) </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="BRAKE FAILURE"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="BRAKE FAILURE"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -418,23 +457,26 @@ class AIRSTART extends Component {
                   <Text>If within airstart envelope (below 25,000 ft MSL, minimum 13% N2 RPM, recommended minimum 250 KIAS): </Text>
                   <Text style={{fontWeight: 'bold'}}> 6. Repeat steps 3 & 4 </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="AIRSTART"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="AIRSTART"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -473,23 +515,26 @@ class SMOKE extends Component {
                   <Text style={{fontWeight: 'bold'}}> 5. SEAT - LOWER </Text>
                   <Text style={{fontWeight: 'bold'}}> 6. MDC FIRING HANDLE - PULL</Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="SMOKE OR FUMES FROM COCKPIT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="SMOKE OR FUMES FROM COCKPIT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -522,23 +567,26 @@ class ELEC extends Component {
 
                   <Text style={{fontWeight: 'bold'}}> 1. Emergency oxygen green ring(s) - PULL </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="TOTAL ELECTRICAL FAILURE"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="TOTAL ELECTRICAL FAILURE"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -574,23 +622,26 @@ class GTS extends Component {
                   <Text>In Flight</Text>
                   <Text style={{fontWeight: 'bold'}}> 1. Engine Switch - OFF </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="GTS FIRE WARNING LIGHT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="GTS FIRE WARNING LIGHT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -624,23 +675,26 @@ class OIL extends Component {
                   <Text style={{fontWeight: 'bold'}}> 1. Throttle - Minimum for safe flight </Text>
                   <Text style={{fontWeight: 'bold'}}> 2. Avoid unnecessary throttle movements </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="OIL PRESSURE WARNING LIGHT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="OIL PRESSURE WARNING LIGHT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -676,23 +730,26 @@ class OXYGEN extends Component {
                   <Text style={{fontWeight: 'bold'}}> 2. OBOGS Flow Selector - OFF </Text>
                   <Text style={{fontWeight: 'bold'}}> 3. Initiate rapid descent below 10,000 FT MSL or Minimum Safe Altitude </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="OXYGEN WARNING LIGHT & HYPOXIA/OBOGS CONTAMINATION"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="OXYGEN WARNING LIGHT & HYPOXIA/OBOGS CONTAMINATION"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -729,23 +786,26 @@ class FLOW extends Component {
                   <Text style={{fontWeight: 'bold'}}> 3. OBOGS Flow Selector - OFF </Text>
                   <Text style={{fontWeight: 'bold'}}> 4. Initiate rapid descent below 10,000 FT MSL or Minimum Safe Altitude </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="LOW/NO MASK FLOW"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="LOW/NO MASK FLOW"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -779,23 +839,26 @@ class BRKPRES extends Component {
                   <Text>CATAPULT</Text>
                   <Text style={{fontWeight: 'bold'}}> 1. Suspend launch </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="BRK PRESS CAUTION LIGHT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="BRK PRESS CAUTION LIGHT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -828,23 +891,26 @@ class CANOPY extends Component {
 
                   <Text style={{fontWeight: 'bold'}}> 1. Canopy Control Lever - CHECK LOCKED </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="CANOPY CAUTION LIGHT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="CANOPY CAUTION LIGHT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -881,23 +947,26 @@ class EGRESS extends Component {
                   <Text style={{fontWeight: 'bold'}}> 4. EJECTION SEATS - SAFE </Text>
                   <Text style={{fontWeight: 'bold'}}> 5. BATT Switches - OFF </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="EMERGENCY ENGINE SHUTDOWN/GROUND EGRESS"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="EMERGENCY ENGINE SHUTDOWN/GROUND EGRESS"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -933,23 +1002,26 @@ class AFLOAT extends Component {
                   <Text style={{fontWeight: 'bold'}}> 3. HOOK - DOWN </Text>
                   <Text style={{fontWeight: 'bold'}}> 4. Transmit </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="BRAKE FAILURE AFLOAT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="BRAKE FAILURE AFLOAT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -992,23 +1064,26 @@ class LDC extends Component {
                   <Text>If airborne: </Text>
                   <Text style={{fontWeight: 'bold'}}> 7. GEAR AND FLAPS - DO NOT REPOSITION </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="LOSS OF DIRECTIONAL CONTROL"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="LOSS OF DIRECTIONAL CONTROL"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -1045,23 +1120,26 @@ class ABORT extends Component {
                   <Text style={{fontWeight: 'bold'}}> 4. HOOK - DOWN (if required) </Text>
                   <Text style={{fontWeight: 'bold'}}> 5. Release brakes prior to crossing the arresting gear </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="ABORT"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="ABORT"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -1097,23 +1175,26 @@ class CAT extends Component {
                   <Text>If engine failed, or unable to stop settle: </Text>
                   <Text style={{fontWeight: 'bold'}}> 3. EJECT </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="EMERGENCY CATAPULT FLYAWAY"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="EMERGENCY CATAPULT FLYAWAY"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -1146,23 +1227,26 @@ class CARRIER extends Component {
 
                   <Text style={{fontWeight: 'bold'}}> 1. GEAR AND FLAPS - DO NOT REPOSITION </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="BLOWN TIRE AT CARRIER"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="BLOWN TIRE AT CARRIER"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -1198,23 +1282,26 @@ class FAIL extends Component {
                   <Text>If above 1500 FT or more than 180 KIAS: </Text>
                   <Text style={{fontWeight: 'bold'}}> 2. Execute Airstart </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="ENGINE FAILURE"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="ENGINE FAILURE"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -1248,23 +1335,26 @@ class ROLL extends Component {
                   <Text>If rolling and yawing is experienced during operation of the wings flaps or while the flaps are extended, an asymmetric wing flaps condition probably exists:</Text>
                   <Text style={{fontWeight: 'bold'}}> 1. FLAPS/SLATS lever - RETURN TO PREVIOUS SETTING </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="UNCOMMANDED ROLL/YAW"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="UNCOMMANDED ROLL/YAW"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -1315,23 +1405,26 @@ class DEPARTURE extends Component {
                   <Text>If out of control passing through 10,000 feet AGL:</Text>
                   <Text style={{fontWeight: 'bold'}}>13. Eject </Text>
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="DEPARTURE/SPIN PROCEDURE"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="DEPARTURE/SPIN PROCEDURE"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </View>
     );
@@ -1367,23 +1460,26 @@ class OPS extends Component {
                           source={require('../assets/images/OPS.png')}
                         />
 
-                  <Button
-                    title="RETURN"
-                    onPress={() => {
-                      this.setModalVisible(false);
-                    }}>
-                  </Button>
+                  <ThemeProvider theme={theme}><Button
+                                      style={{marginTop:30}}
+                                      title="RETURN"
+                                      titleStyle={{fontWeight: 'bold'}}
+                                      onPress={() => {
+                                        this.setModalVisible(false);
+                                      }}>
+                                    </Button></ThemeProvider>
 
               </View>
             </View>
           </Modal>
 
-          <Button
-            title="OPS LIMITS"
-            onPress={() => {
-              this.setModalVisible(true);
-            }}>
-          </Button>
+          <ThemeProvider theme={theme}><Button
+                      title="OPS LIMITS"
+                      titleStyle={{fontWeight: 'bold'}}
+                      onPress={() => {
+                        this.setModalVisible(true);
+                      }}>
+                    </Button></ThemeProvider>
 
         </ScrollView>
     );
@@ -1430,4 +1526,12 @@ export default function EPScreen() {
 
 EPScreen.navigationOptions = {
   title: 'EPs & Limits',
+  headerStyle: {
+      backgroundColor: 'black',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 30,
+    },
 };

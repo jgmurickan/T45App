@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import {ScrollView, View, ViewPropTypes, Text, Picker, StyleSheet, Button, Linking, Alert, Dimensions, Platform} from 'react-native';
+import {ScrollView, View, ViewPropTypes, Text, Picker, StyleSheet, Linking, Alert, Dimensions, Platform} from 'react-native';
 import PropTypes from 'prop-types';
 import * as WebBrowser from 'expo-web-browser';
 import Constants from 'expo-constants';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import PDFReader from 'rn-pdf-reader-js';
+import { ThemeProvider, Button } from 'react-native-elements';
 
 
 class DropdownScreen extends Component {
 
-  state = {strike_stage: '', e2_stage: '', link: ''}
+  state = {strike_stage: '163', e2_stage: '175', link: ''}
   updateStrike = (stage) => {
       this.setState({ strike_stage: stage })
    }
@@ -23,7 +24,6 @@ class DropdownScreen extends Component {
     <ScrollView>
       <Text style = {styles.getStartedText}> Strike </Text>
       <Picker selectedValue = {this.state.strike_stage} onValueChange = {this.updateStrike}>
-         <Picker.Item label = "" value = "" />
          <Picker.Item label = "BI" value = "163" />
          <Picker.Item label = "RI" value = "172" />
          <Picker.Item label = "FAM" value = "87" />
@@ -47,19 +47,15 @@ class DropdownScreen extends Component {
          <Picker.Item label = "CQ" value = "325" />
       </Picker>
       <Button
+          buttonStyle={{borderRadius: 100, backgroundColor: 'grey'}}
           title= 'Open Syllabus'
+          titleStyle={{fontWeight: 'bold'}}
           onPress={ () => this.props.navigation.navigate('Strike', {page: this.state.strike_stage}) }
       />
 
-      <View
-      style={{
-      borderBottomColor: 'black',
-      borderBottomWidth: 1,
-       }}
-      />
+
       <Text style = {styles.getStartedText}> E2/C2 </Text>
       <Picker selectedValue = {this.state.e2_stage} onValueChange = {this.updateE2}>
-         <Picker.Item label = "" value = "" />
          <Picker.Item label = "BI" value = "175" />
          <Picker.Item label = "RI" value = "184" />
          <Picker.Item label = "FAM" value = "98" />
@@ -75,7 +71,9 @@ class DropdownScreen extends Component {
          <Picker.Item label = "CQ" value = "249" />
       </Picker>
       <Button
+          buttonStyle={{borderRadius: 100, backgroundColor: 'black'}}
           title= 'Open Syllabus'
+          titleStyle={{fontWeight: 'bold'}}
           onPress={ () => this.props.navigation.navigate('E2C2', {page: this.state.e2_stage}) }
       />
     </ScrollView>
@@ -87,7 +85,7 @@ class Strike extends Component {
   
   render() {
     const pg = this.props.navigation.getParam('page', '')
-    if(pg == '163') { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/gysrfujkb2udmy1/BI_STRIKE.pdf?dl=0-R'  }} />); }
+    if(pg == '163') { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/r19llskv8ago2nw/BI_STRIKE.pdf?dl=0'  }} />); }
     if(pg == '172') { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/kqxutg3rt22g2c4/RI_STRIKE.pdf?dl=0' }} />); }
     if(pg == '87')  { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/tbp3ugaztpjr8i7/FAM_STRIKE.pdf?dl=0' }}/>); }
     if(pg == '99')  { return (<PDFReader source={{ uri: 'https://dl.dropboxusercontent.com/s/ucyduraxii6g84d/OCF41_STRIKE.pdf?dl=0' }}/>); }
@@ -159,6 +157,14 @@ export default function WhiteBoardScreen() {
 
 WhiteBoardScreen.navigationOptions = {
   title: 'Syllabus Notes & Discuss Items',
+  headerStyle: {
+      backgroundColor: 'black',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 20,
+    },
 };
 
 const styles = StyleSheet.create({
@@ -210,10 +216,9 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     paddingTop: 5,
-    fontSize: 15,
+    fontSize: 18,
     fontWeight: 'bold',
-    color: 'rgba(96,100,109, 1)',
-    lineHeight: 20,
+    color: 'black',
     textAlign: 'center',
   },
   tabBarInfoContainer: {

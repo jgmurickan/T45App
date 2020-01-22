@@ -6,10 +6,10 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
   Dimensions
 } from 'react-native';
+import { ThemeProvider, Button } from 'react-native-elements';
 
 import { MonoText } from '../components/StyledText';
 
@@ -28,37 +28,38 @@ export default function HomeScreen() {
 
         </View>
 
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handle22FrontPagePress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              VT-22 Front Page
-            </Text>
-          </TouchableOpacity>
-        </View>
+          <Button onPress={handle22FrontPagePress} 
+              style={styles.helpLink}
+              title="VT-22 Front Page"
+              titleStyle={{fontWeight: 'bold'}}>
+          </Button>
 
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handle21FrontPagePress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              VT-21 Front Page
-            </Text>
-          </TouchableOpacity>
-        </View>
 
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handle7FrontPagePress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              VT-7 Front Page
-            </Text>
-          </TouchableOpacity>
-        </View>
+          <Button onPress={handle21FrontPagePress} 
+              style={styles.helpLink}
+              buttonStyle={{backgroundColor: 'red'}}
+              title="VT-21 Front Page"
+              titleStyle={{fontWeight: 'bold'}}>
+          </Button>
 
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handle9FrontPagePress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>
-              VT-9 Front Page
-            </Text>
-          </TouchableOpacity>
-        </View>
+
+
+          <Button onPress={handle9FrontPagePress} 
+              style={styles.helpLink}
+              buttonStyle={{backgroundColor: 'orange'}}
+              title="VT-9 Front Page"
+              titleStyle={{fontWeight: 'bold'}}>
+          </Button>
+
+
+
+          <Button onPress={handle7FrontPagePress} 
+              style={styles.helpLink}
+              buttonStyle={{backgroundColor: 'brown'}}
+              title="VT-7 Front Page"
+              titleStyle={{fontWeight: 'bold'}}>
+          </Button>
+
 
         <Image
           style = {{
@@ -69,7 +70,7 @@ export default function HomeScreen() {
             width: deviceWidth,
             flex: 1
           }}
-          source={require('../assets/images/t45.png')}
+          source={require('../assets/images/squadrons.png')}
         />
 
         <Text style = {{ fontSize: 8 }}> © Murickan Enterprises LLC 501(c)(3) Non Profit 401k Fortune 501 Company</Text>
@@ -205,7 +206,7 @@ const styles = StyleSheet.create({
     marginTop:50,
     fontSize: 25,
     fontWeight: 'bold',
-    color: 'rgba(96,100,109, 1)',
+    color: 'black',
     lineHeight: 24,
     textAlign: 'center',
   },
