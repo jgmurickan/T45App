@@ -821,7 +821,7 @@ export default function TOLDScreen() {
 TOLDScreen.navigationOptions = {
   title: 'TOLD',
   headerStyle: {
-      backgroundColor: 'black',
+      backgroundColor: '#00264d',
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
@@ -880,7 +880,7 @@ const styles = StyleSheet.create({
   getStartedText: {
     fontWeight: 'bold',
     fontSize: 17,
-    color: 'black',
+    color: '#00264d',
     lineHeight: 24,
     textAlign: 'center',
   },

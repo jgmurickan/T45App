@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { View, ScrollView, Image, Text, Modal, TouchableHighlight } from 'react-native';
 import { ThemeProvider, Button } from 'react-native-elements';
+import { Linking } from 'expo';
 
 const theme = {
   Button: {
@@ -12,7 +13,7 @@ const theme = {
     buttonStyle: {
       borderRadius:100,
       large: true,
-      backgroundColor: 'red',
+      backgroundColor: '#00264d',
     },
 
   }
@@ -67,6 +68,7 @@ class EGTRPM extends Component {
           <ThemeProvider theme={theme}><Button
                       title="EGT/RPM WARNING LIGHT OR COMPRESSOR STALL"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -181,6 +183,7 @@ class TPHOT extends Component {
           <ThemeProvider theme={theme}><Button
                       title="TP HOT CAUTION LIGHT"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -292,6 +295,7 @@ class EFIRE extends Component {
           <ThemeProvider theme={theme}><Button
                       title="ELECTRICAL FIRE"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -413,6 +417,7 @@ class BRAKE extends Component {
           <ThemeProvider theme={theme}><Button
                       title="BRAKE FAILURE"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -531,6 +536,7 @@ class SMOKE extends Component {
           <ThemeProvider theme={theme}><Button
                       title="SMOKE OR FUMES FROM COCKPIT"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -638,6 +644,7 @@ class GTS extends Component {
           <ThemeProvider theme={theme}><Button
                       title="GTS FIRE WARNING LIGHT"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -746,6 +753,7 @@ class OXYGEN extends Component {
           <ThemeProvider theme={theme}><Button
                       title="OXYGEN WARNING LIGHT & HYPOXIA/OBOGS CONTAMINATION"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -855,6 +863,7 @@ class BRKPRES extends Component {
           <ThemeProvider theme={theme}><Button
                       title="BRK PRESS CAUTION LIGHT"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -963,6 +972,7 @@ class EGRESS extends Component {
           <ThemeProvider theme={theme}><Button
                       title="EMERGENCY ENGINE SHUTDOWN/GROUND EGRESS"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -1080,6 +1090,7 @@ class LDC extends Component {
           <ThemeProvider theme={theme}><Button
                       title="LOSS OF DIRECTIONAL CONTROL"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -1191,6 +1202,7 @@ class CAT extends Component {
           <ThemeProvider theme={theme}><Button
                       title="EMERGENCY CATAPULT FLYAWAY"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -1298,6 +1310,7 @@ class FAIL extends Component {
           <ThemeProvider theme={theme}><Button
                       title="ENGINE FAILURE"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -1421,6 +1434,7 @@ class DEPARTURE extends Component {
           <ThemeProvider theme={theme}><Button
                       title="DEPARTURE/SPIN PROCEDURE"
                       titleStyle={{fontWeight: 'bold'}}
+                      buttonStyle={{backgroundColor:'grey'}}
                       onPress={() => {
                         this.setModalVisible(true);
                       }}>
@@ -1443,45 +1457,18 @@ class OPS extends Component {
 
   render() {
     return (
-        <ScrollView style={{marginTop: 22}}>
-          
-          <Modal
-            animationType="slide"
-            transparent={false}
-            visible={this.state.modalVisible}
-            onRequestClose={() => {
-              alert('Modal has been closed.');
-            }}>
-            <View style={{marginTop: 100}}>
-              <View>
 
-                  <Image
-                    style={{ width: '100%', resizeMode: 'stretch'}}
-                          source={require('../assets/images/OPS.png')}
-                        />
-
-                  <ThemeProvider theme={theme}><Button
-                                      style={{marginTop:30}}
-                                      title="RETURN"
-                                      titleStyle={{fontWeight: 'bold'}}
-                                      onPress={() => {
-                                        this.setModalVisible(false);
-                                      }}>
-                                    </Button></ThemeProvider>
-
-              </View>
-            </View>
-          </Modal>
-
-          <ThemeProvider theme={theme}><Button
-                      title="OPS LIMITS"
-                      titleStyle={{fontWeight: 'bold'}}
-                      onPress={() => {
-                        this.setModalVisible(true);
-                      }}>
-                    </Button></ThemeProvider>
-
-        </ScrollView>
+        <View style={{marginTop: 22}}>
+          <ThemeProvider theme={theme}>
+            <Button
+              title="T45 LIMITS"
+              titleStyle={{fontWeight: 'bold'}}
+              onPress={() => {
+                Linking.openURL('https://dl.dropboxusercontent.com/s/1yphja58qqt91qu/T-45C%20Limitations.pdf?dl=0');
+              }}>
+            </Button>
+          </ThemeProvider>
+        </View>
     );
   }
 }
@@ -1493,6 +1480,7 @@ export default function EPScreen() {
    */
   return (
     <ScrollView>
+      <OPS/>
       <EGTRPM/>
       <SKID/>
       <TPHOT/>
@@ -1518,7 +1506,6 @@ export default function EPScreen() {
       <FAIL/>
       <ROLL/>
       <DEPARTURE/>
-      <OPS/>
     </ScrollView>
 
   		);
@@ -1527,7 +1514,7 @@ export default function EPScreen() {
 EPScreen.navigationOptions = {
   title: 'EPs & Limits',
   headerStyle: {
-      backgroundColor: 'black',
+      backgroundColor: '#00264d',
     },
     headerTintColor: '#fff',
     headerTitleStyle: {

@@ -10,10 +10,12 @@ import {
   Dimensions
 } from 'react-native';
 import { ThemeProvider, Button } from 'react-native-elements';
+import { SplashScreen } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
 const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
 
 export default function HomeScreen() {
   return (
@@ -24,12 +26,13 @@ export default function HomeScreen() {
 
         <View style={styles.getStartedContainer}>
 
-          <Text style={styles.getStartedText}>Welcome to the T45 Briefing App!</Text>
+          <Text style={styles.getStartedText}>Goshawk Ball</Text>
 
         </View>
 
           <Button onPress={handle22FrontPagePress} 
               style={styles.helpLink}
+              buttonStyle={{backgroundColor: '#00264d'}}
               title="VT-22 Front Page"
               titleStyle={{fontWeight: 'bold'}}>
           </Button>
@@ -37,7 +40,7 @@ export default function HomeScreen() {
 
           <Button onPress={handle21FrontPagePress} 
               style={styles.helpLink}
-              buttonStyle={{backgroundColor: 'red'}}
+              buttonStyle={{backgroundColor: 'grey'}}
               title="VT-21 Front Page"
               titleStyle={{fontWeight: 'bold'}}>
           </Button>
@@ -46,7 +49,7 @@ export default function HomeScreen() {
 
           <Button onPress={handle9FrontPagePress} 
               style={styles.helpLink}
-              buttonStyle={{backgroundColor: 'orange'}}
+              buttonStyle={{backgroundColor: '#00264d'}}
               title="VT-9 Front Page"
               titleStyle={{fontWeight: 'bold'}}>
           </Button>
@@ -55,26 +58,24 @@ export default function HomeScreen() {
 
           <Button onPress={handle7FrontPagePress} 
               style={styles.helpLink}
-              buttonStyle={{backgroundColor: 'brown'}}
+              buttonStyle={{backgroundColor: 'grey'}}
               title="VT-7 Front Page"
               titleStyle={{fontWeight: 'bold'}}>
           </Button>
 
-
-        <Image
-          style = {{
-            paddingTop: 100,
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: deviceWidth,
-            width: deviceWidth,
-            flex: 1
-          }}
-          source={require('../assets/images/squadrons.png')}
-        />
-
-        <Text style = {{ fontSize: 8 }}> © Murickan Enterprises LLC 501(c)(3) Non Profit 401k Fortune 501 Company</Text>
-
+        <View>
+          <Image
+            style = {{
+              // marginTop: deviceHeight/15,
+              // paddingTop: deviceHeight/3,
+              // justifyContent: 'center',
+              // alignItems: 'center',
+              flex: 1
+            }}
+            source={require('../assets/images/t-45.png')}
+            resizeMode="contain"
+          />
+        </View>
 
       </ScrollView>
 
@@ -204,9 +205,10 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     marginTop:50,
-    fontSize: 25,
+    paddingTop:50,
+    fontSize: 40,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#00264d',
     lineHeight: 24,
     textAlign: 'center',
   },
@@ -217,7 +219,7 @@ const styles = StyleSheet.create({
     right: 0,
     ...Platform.select({
       ios: {
-        shadowColor: 'black',
+        shadowColor: '#00264d',
         shadowOffset: { width: 0, height: -3 },
         shadowOpacity: 0.1,
         shadowRadius: 3,

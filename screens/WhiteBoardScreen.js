@@ -47,7 +47,7 @@ class DropdownScreen extends Component {
          <Picker.Item label = "CQ" value = "325" />
       </Picker>
       <Button
-          buttonStyle={{borderRadius: 100, backgroundColor: 'grey'}}
+          buttonStyle={{borderRadius: 100, backgroundColor: '#00264d'}}
           title= 'Open Syllabus'
           titleStyle={{fontWeight: 'bold'}}
           onPress={ () => this.props.navigation.navigate('Strike', {page: this.state.strike_stage}) }
@@ -71,7 +71,7 @@ class DropdownScreen extends Component {
          <Picker.Item label = "CQ" value = "249" />
       </Picker>
       <Button
-          buttonStyle={{borderRadius: 100, backgroundColor: 'black'}}
+          buttonStyle={{borderRadius: 100, backgroundColor: 'grey'}}
           title= 'Open Syllabus'
           titleStyle={{fontWeight: 'bold'}}
           onPress={ () => this.props.navigation.navigate('E2C2', {page: this.state.e2_stage}) }
@@ -158,7 +158,7 @@ export default function WhiteBoardScreen() {
 WhiteBoardScreen.navigationOptions = {
   title: 'Syllabus Notes & Discuss Items',
   headerStyle: {
-      backgroundColor: 'black',
+      backgroundColor: '#00264d',
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     fontSize: 18,
     fontWeight: 'bold',
-    color: 'black',
+    color: '#00264d',
     textAlign: 'center',
   },
   tabBarInfoContainer: {
