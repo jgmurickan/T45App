@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Goshawk Airlines",
+    "name": "Goshawk Ball",
     "slug": "T45App",
     "privacy": "public",
     "sdkVersion": "35.0.0",
@@ -24,7 +24,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.murickanenterprises.goshawkball"
+    },
+    "android": {
+      "package": "com.murickanenterprises.goshawkball",
+      "permissions": []
     }
+
   }
 }

@@ -66,10 +66,12 @@ export default function HomeScreen() {
         <View>
           <Image
             style = {{
-              // marginTop: deviceHeight/15,
-              // paddingTop: deviceHeight/3,
+              marginTop: deviceHeight/12,
+              paddingTop: deviceHeight/3,
               // justifyContent: 'center',
               // alignItems: 'center',
+              height: undefined,
+              width: undefined,
               flex: 1
             }}
             source={require('../assets/images/t-45.png')}

@@ -8,11 +8,9 @@ const theme = {
 
     containerViewStyle: {
       borderRadius:100,
-      large: true,
     },
     buttonStyle: {
       borderRadius:100,
-      large: true,
       backgroundColor: '#00264d',
     },
 
